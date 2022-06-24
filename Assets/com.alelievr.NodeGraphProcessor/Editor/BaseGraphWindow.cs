@@ -101,12 +101,16 @@ namespace GraphProcessor
 			this.graph = graph;
 
 			if (graphView != null)
-				rootView.Remove(graphView);
+			{
+				rootView.Clear();
+			}
+			
+				
 
 			//Initialize will provide the BaseGraphView
 			InitializeWindow(graph);
 
-			graphView = rootView.Children().FirstOrDefault(e => e is BaseGraphView) as BaseGraphView;
+			graphView = rootView.Q<BaseGraphView>();
 
 			if (graphView == null)
 			{
