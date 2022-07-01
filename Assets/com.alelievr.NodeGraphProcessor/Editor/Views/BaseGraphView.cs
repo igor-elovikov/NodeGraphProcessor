@@ -285,6 +285,9 @@ namespace GraphProcessor
 
                 AddGroup(group);
             }
+            
+            // Disable auto creating edges for now
+            return;
 
             foreach (var serializedEdge in data.copiedEdges)
 			{
